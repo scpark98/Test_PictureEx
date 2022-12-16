@@ -7,6 +7,8 @@
 #include "Test_PictureExDlg.h"
 #include "afxdialogex.h"
 
+#include "../../Common/Functions.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -105,12 +107,17 @@ BOOL CTest_PictureExDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
-	m_static_gif.Load(_T("d:\\media\\test_image\\17_100x86.gif"));
-	//m_static_gif.Load(_T("c:\\temp\\letter-nhdr09.gif"));
+	//m_static_gif.Load(_T("c:\\scpark\\media\\test_image\\ring.gif"));
+	m_static_gif.Load(MAKEINTRESOURCE(IDR_GIF_NH_KLPGA_MASCOT01), _T("GIF"), CSize(200, 200));
+	//m_static_gif.Load(_T("c:\\scpark\\media\\test_image\\ConventionalOblongFairybluebird-size_restricted.gif"));
 	//m_static_gif.Load(_T("h:\\temp\\test.jpg"));
 	//m_static_gif.Load(_T("c:\\temp\\eclipse_lg.gif"));
 	m_static_gif.Draw();
 	//SetTimer(0, 10, NULL);
+
+	CString path = _T("c:\\a\\b/c\\d/e\\../../1.txt");
+	normalize_path(path);
+
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -153,6 +160,7 @@ void CTest_PictureExDlg::OnPaint()
 	else
 	{
 		CDialogEx::OnPaint();
+		/*
 		return;
 		CPaintDC	dc(this);
 		CRect rc;
@@ -169,7 +177,7 @@ void CTest_PictureExDlg::OnPaint()
 
 		pPicture->Render(dc.GetSafeHdc(), 0, 0, rc.Width(), rc.Height(),
 			0, hmHeight, hmWidth, -hmHeight, NULL);
-
+		*/
 	}
 }
 
@@ -185,10 +193,10 @@ HCURSOR CTest_PictureExDlg::OnQueryDragIcon()
 void CTest_PictureExDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: Add your message handler code here and/or call default
-	if (nIDEvent == 0)
-	{
-		Invalidate();
-	}
+	//if (nIDEvent == 0)
+	//{
+	//	Invalidate();
+	//}
 	CDialogEx::OnTimer(nIDEvent);
 }
 

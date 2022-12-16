@@ -39,6 +39,9 @@
     <ClInclude Include="..\..\Common\PictureEx.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Common\Functions.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Test_PictureEx.cpp">
@@ -53,6 +56,9 @@
     <ClCompile Include="..\..\Common\PictureEx.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Common\Functions.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Test_PictureEx.rc">
@@ -61,6 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Test_PictureEx.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\media\test_image\NH_KLPGA_mascot01.bin">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
